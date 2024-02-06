@@ -1,6 +1,7 @@
 # Shopify Product Page
 
 This webpage displays details of a single product fetched from a Shopify store.
+live page  - https://unnath123.github.io/Mermato_assessment/
 
 ## Functionality
 
