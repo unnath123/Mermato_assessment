@@ -66,13 +66,13 @@ function renderData(){
     const container_left = document.getElementById("container-left");
     container_left.innerHTML = `
     <div class="product-image-box">
-                <img class="product-image" src=${prod_detail.images[0].src} alt="product-image">
+                <img class="product-image" src="./images/Rectangle 4.png" alt="product-image">
             </div>
             <div class="product-thumbnail">
                 <div class="flex-product">
-                    <img src=${prod_detail.images[0].src} alt="more-images">
-                    <img src=${prod_detail.images[1].src} alt="more-images">
-                    <img src=${prod_detail.images[2].src} alt="more-images">
+                    <img src="./images/Rectangle 6.png" alt="more-images">
+                    <img src="./images/Rectangle 6.png" alt="more-images">
+                    <img src="./images/Rectangle 6.png" alt="more-images">
                     <img src=${prod_detail.images[3].src} alt="more-images">
                 </div>
             </div>`
