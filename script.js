@@ -1,6 +1,7 @@
 let prod_detail;
 let count = 0;
 let size;
+let color;
 
 
 
@@ -11,6 +12,7 @@ async function fetchData(){
     prod_detail = data.product;
     console.log(data.product);
     renderData() 
+    renderColors()
 }
 
 function increment(){
@@ -33,7 +35,7 @@ function updateCount(){
 
 function addToCart(){
     let prod_name = prod_detail.title;
-    let sentence = `${prod_detail.title} with Color Yellow and Size ${size} added to cart`
+    let sentence = `${prod_detail.title} with Color ${color} and Size ${size} added to cart`
 
     const container = document.getElementById("selected-prod-info")
     container.style.display = "block"
@@ -41,6 +43,24 @@ function addToCart(){
 }
 
 
+function renderColors() {
+    const colorsContainer = document.querySelector(".colors");
+    (prod_detail.options[0].values).forEach(colorObject => {
+        const colorName = Object.keys(colorObject)[0];
+        const colorCode = colorObject[colorName];
+        const colorBox = document.createElement("div");
+        colorBox.addEventListener("click", function(){
+            color = colorName;
+            colorBox.classList.add("color-box-ticked");
+            colorBox.innerText = "✔"
+            
+        })
+        colorBox.classList.add("color-box");
+        // colorBox.textContent = colorName;
+        colorBox.style.backgroundColor = colorCode;
+        colorsContainer.appendChild(colorBox);
+    });
+}
 
 function renderData(){
     const container_left = document.getElementById("container-left");
@@ -75,10 +95,7 @@ function renderData(){
             <div class="choose-colors">
                 <p class="greyy">Choose a color</p>
                 <div class="colors">
-                    <div class="color-box">Red</div>
-                    <div class="color-box">blue</div>
-                    <div class="color-box">green</div>
-                    <div class="color-box">yellow</div>
+        
                 </div>
             </div>
 
